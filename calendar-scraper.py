@@ -91,17 +91,23 @@ cal_dict={
 
 def main():
 
+    # Get google calendar API service
     service=get_gcalsvc()
-    
+
+    # Iterate over calendar groups in calendar dictionary
     for cal_grp in cal_dict:
+        
         print(f"Processing calendar group {cal_grp}")
-        #print(cal_dict[cal_grp]["input_urls"])
+        
         events=[]
+
+        # Get all events from input ics subscriptions
         for in_lab,in_url in cal_dict[cal_grp]["input_urls"].items():
             print(f"  - Getting events from {in_lab}: {in_url}")
             events.extend(get_icsevents(get_icscal(in_url)))
         print(f'Found {len(events)} event(s) from {len(cal_dict[cal_grp]["input_urls"])} calendar(s)')
 
+        # Write events to output google calendar (if they do not already exist and pass filter requirements)
         for out_lab,out_ID in cal_dict[cal_grp]["output_IDs"].items():
             outcal_events=get_existing_gcal_events(service,out_ID)
             events_to_write=gcal_events_to_update(events,outcal_events,cal_dict[cal_grp]["filter"])
@@ -138,7 +144,7 @@ def get_gcalsvc():
 
 
 def create_gcal_event(summary,start,end,location=None,description=None,url=None):
-
+    """Put standard event data in dictionary format that can be passed directly to google API"""
     event = {}
     event['summary']=f'{summary}'
     event['start']={
@@ -164,25 +170,26 @@ def create_gcal_event(summary,start,end,location=None,description=None,url=None)
 
 
 def insert_gcal_event(service,calendarId,event):
-
-    #event = service.events().insert(calendarId='primary', body=event).execute()
+    """Add new event to google calendar"""
     event = service.events().insert(calendarId=calendarId, body=event).execute()
     print('Event created: %s' % (event.get('htmlLink')))
 
     return
     
 def get_existing_gcal_events(service,calendarId):
+    """Get existing events from google calendar"""
     events_result = service.events().list(calendarId=calendarId).execute()
     events = events_result.get('items', [])
     return events
     
 def get_icscal(url):
-    """Get calendar from ics url"""
+    """Get icspy calendar object from ics url"""
     c = Calendar(requests.get(url).text)
     return c
 
 
 def get_icsevents(c):
+    """Takes input ics Calender object to extract events and return them in google calendar format"""
     events_for_gcal=[]
     for e in list(c.events):
         print(f'      - {e.name}: {e.begin}-{e.end}, {e.url}')
@@ -192,6 +199,7 @@ def get_icsevents(c):
         
 
 def match_datetimes(ds1,ds2):
+    """Dates can be read from different timezones but correspond to the same time, this compares datetimes at UTC"""
     dt1 = dateutil.parser.parse(ds1)
     dt2 = dateutil.parser.parse(ds2)
     local_dt1 = dt1.astimezone(pytz.utc)

@@ -8,4 +8,5 @@ This lets you:
 - have events the are editable/deletable by you.
 
 The script should be run in a cron job to update ~daily.
-It relies on the [icspy API](https://github.com/ics-py/ics-py) for reading ics calendar subscriptions and on the [google calendar API](https://developers.google.com/calendar/overview) to read from and write to your personal google calendars.
+
+It relies on the [icspy API](https://github.com/ics-py/ics-py) for reading ics calendar subscriptions and on the [google calendar API](https://developers.google.com/calendar/overview) to read from and write to your personal google calendars. NB: The first time you have to do it, setting up the google API authentication is a bit of a pain, but the instructions are pretty good.

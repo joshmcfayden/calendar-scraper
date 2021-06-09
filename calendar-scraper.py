@@ -103,19 +103,21 @@ def main():
 
         # Get all events from input ics subscriptions
         for in_lab,in_url in cal_dict[cal_grp]["input_urls"].items():
-            print(f"  - Getting events from {in_lab}: {in_url}")
+            print(f"   - Getting events from {in_lab}: {in_url}")
             events.extend(get_icsevents(get_icscal(in_url)))
-        print(f'Found {len(events)} event(s) from {len(cal_dict[cal_grp]["input_urls"])} calendar(s)')
+        print(f'   Found {len(events)} event(s) from {len(cal_dict[cal_grp]["input_urls"])} calendar(s)')
 
+        total_new_events=0
         # Write events to output google calendar (if they do not already exist and pass filter requirements)
         for out_lab,out_ID in cal_dict[cal_grp]["output_IDs"].items():
             outcal_events=get_existing_gcal_events(service,out_ID)
             events_to_write=gcal_events_to_update(events,outcal_events,cal_dict[cal_grp]["filter"])
-            print(f"  - Sending {len(events_to_write)} new event(s) to {out_lab}: {out_ID}")
+            total_new_events+=len(events_to_write)
+            print(f"   - Sending {len(events_to_write)} new event(s) to {out_lab}: {out_ID}")
             for event in events_to_write:
                 insert_gcal_event(service,out_ID,event)
                 
-            
+    print(f'Found a total of {total_new_events} new event(s) to write.')
     
 def get_gcalsvc():
     """Gets google calendar API service"""

@@ -20,11 +20,19 @@ pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth
 pip3 install ics --user
 ```
 
-Then you need the google API credentials as detailed in the prerequisites [here](https://developers.google.com/calendar/quickstart/python).
+Then you need the google API credentials as detailed in the prerequisites [here](https://developers.google.com/calendar/quickstart/python) and store the relevant `.json` files in your home directory.
+
 
 # Running
 
 To run you simply execute the script:
 ```
 ./calendar-scraper.py
+```
+
+# Cron job
+
+To get this running once every 4 hours in a cron job on lxplus you can run `acrontab -e` and the enter the following line:
+```
+0 */4 * * * lxplus /afs/cern.ch/user/<USER INITIAL>/<USERNAME>/calendar-scraper/calendar-scraper.py > /afs/cern.ch/user/<USER INITIAL>/<USERNAME>/calendar-scraper/calendar-scraper.log
 ```

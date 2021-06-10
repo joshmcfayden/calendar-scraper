@@ -47,12 +47,12 @@ cal_dict={
 
 To run you simply execute the script:
 ```bash
-./calendar-scraper.py
+./calendar_scraper.py
 ```
 
 # Cron job
 
 To get this running once every 4 hours in a cron job on lxplus you can run `acrontab -e` and the enter the following line:
 ```
-0 */4 * * * lxplus /afs/cern.ch/user/<USER INITIAL>/<USERNAME>/calendar-scraper/calendar-scraper.py > /afs/cern.ch/user/<USER INITIAL>/<USERNAME>/calendar-scraper/calendar-scraper.log
+0 */4 * * * lxplus /afs/cern.ch/user/<USER INITIAL>/<USERNAME>/calendar-scraper/calendar_scraper.py > /afs/cern.ch/user/<USER INITIAL>/<USERNAME>/calendar-scraper/calendar_scraper.log
 ```

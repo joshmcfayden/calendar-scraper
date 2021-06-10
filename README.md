@@ -25,6 +25,9 @@ Then you need the google API credentials as detailed in the prerequisites [here]
 
 # Running
 
+The structure of your input and output calendars is governed by the `cal_dict` dictionary. Each entry in the dictionary corresponds to a calendar "group". Each group can have multiple input calendars and usually one output calendar.
+
+
 To run you simply execute the script:
 ```
 ./calendar-scraper.py

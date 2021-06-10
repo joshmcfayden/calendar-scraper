@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+B0;95;0c#!/usr/bin/python3
 
 # includes for gCal API
 from __future__ import print_function
@@ -38,6 +38,7 @@ cal_dict={
         "input_urls":{
             "ATLAS Top+X":"https://indico.cern.ch/export/categ/12104.ics?apikey=d465b7f8-bb8d-4da9-b4e0-069b534b2af3&from=-31d&signature=23d64faf6b2f598b2a998200f6fbbb7822dd5204",
             "ATLAS HTop":"https://indico.cern.ch/export/categ/9788.ics?apikey=d465b7f8-bb8d-4da9-b4e0-069b534b2af3&from=-31d&signature=d3a58260e55ce56e1ecad3698607f17b73752bb7",
+            "Global EFT":"https://indico.cern.ch/category/13634/events.ics?user_token=56945_50Z_rm3Q7FGn8I8SI2Na5qEoXTnrng6_n0t_fN6Hx5U",
         },
         "output_IDs":{
             "Top+X":"1mue6og8iee85iuigf9n8r2a3c@group.calendar.google.com",

@@ -15,7 +15,7 @@ It relies on the [icspy API](https://github.com/ics-py/ics-py) for reading ics c
 The first time you have to do it, setting up the google API authentication is a bit of a pain, but the [instructions](https://developers.google.com/calendar/quickstart/python) are pretty good.
 
 To get the python dependancies it's just two commands:
-```
+```bash
 pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib --user
 pip3 install ics --user
 ```
@@ -25,11 +25,28 @@ Then you need the google API credentials as detailed in the prerequisites [here]
 
 # Running
 
-The structure of your input and output calendars is governed by the `cal_dict` dictionary. Each entry in the dictionary corresponds to a calendar "group". Each group can have multiple input calendars and usually one output calendar.
+The structure of your input and output calendars is governed by the `cal_dict` dictionary. Each entry in the dictionary corresponds to a calendar "group". Each group can have multiple input calendars and usually one output calendar. The format is as follows:
+
+```python
+cal_dict={
+    "GROUP NAME":{
+        "input_urls":{
+            "INPUT1 LABEL":"<ics1 URL (e.g. https://indico.cern.ch/category/<CATEGORY ID>/events.ics?user_token=1234_XYZ)>",
+	    "INPUT2 LABEL":"<ics2 URL>",
+        },
+        "output_IDs":{
+            "OUTPUT LABEL":"<GOOGLE CALENDAR ID>@group.calendar.google.com"
+        },
+	"filter":{
+            "exclude":["THIS BORING MEETING NAME"]
+        },
+    }
+}
+```	
 
 
 To run you simply execute the script:
-```
+```bash
 ./calendar-scraper.py
 ```
 

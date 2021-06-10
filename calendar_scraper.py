@@ -11,6 +11,7 @@ from google.oauth2.credentials import Credentials
 
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 cred_dir = os.environ["HOME"]
+
 # includes for ics API
 from ics import Calendar
 import requests

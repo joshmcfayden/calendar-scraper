@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/local/bin/python3
+#/usr/bin/env python3
 
 # includes for gCal API
 from __future__ import print_function
@@ -45,7 +46,7 @@ cal_dict={
             "Top+X":"1mue6og8iee85iuigf9n8r2a3c@group.calendar.google.com",
         },
         "filter":{
-            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting"]
+            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting"]
         }
     },
 
@@ -96,6 +97,8 @@ def main():
     # Get google calendar API service
     service=get_gcalsvc()
 
+    total_new_events=0
+    
     # Iterate over calendar groups in calendar dictionary
     for cal_grp in cal_dict:
         
@@ -109,7 +112,7 @@ def main():
             events.extend(get_icsevents(get_icscal(in_url)))
         print(f'   Found {len(events)} event(s) from {len(cal_dict[cal_grp]["input_urls"])} calendar(s)')
 
-        total_new_events=0
+
         # Write events to output google calendar (if they do not already exist and pass filter requirements)
         for out_lab,out_ID in cal_dict[cal_grp]["output_IDs"].items():
             outcal_events=get_existing_gcal_events(service,out_ID)

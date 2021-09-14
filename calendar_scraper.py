@@ -1,5 +1,4 @@
 #!/usr/local/bin/python3
-#/usr/bin/env python3
 
 # includes for gCal API
 from __future__ import print_function
@@ -22,6 +21,7 @@ import pprint
 import pytz
 import dateutil.parser
 
+master_ID="krjhbtbk9u1028frg0n4pslso0@group.calendar.google.com"
 
 cal_dict={
     "HSF":{
@@ -39,6 +39,7 @@ cal_dict={
     "Top+X":{
         "input_urls":{
             "ATLAS Top+X":"https://indico.cern.ch/export/categ/12104.ics?apikey=d465b7f8-bb8d-4da9-b4e0-069b534b2af3&from=-31d&signature=23d64faf6b2f598b2a998200f6fbbb7822dd5204",
+            "ATLAS Top Reco":"https://indico.cern.ch/category/3337/events.ics?user_token=56945_a-uEqcijLrilk2YBr3lgIw7nt6t7siwyc6ViBB_4CkY",
             "ATLAS HTop":"https://indico.cern.ch/export/categ/9788.ics?apikey=d465b7f8-bb8d-4da9-b4e0-069b534b2af3&from=-31d&signature=d3a58260e55ce56e1ecad3698607f17b73752bb7",
             "Global EFT":"https://indico.cern.ch/category/13634/events.ics?user_token=56945_50Z_rm3Q7FGn8I8SI2Na5qEoXTnrng6_n0t_fN6Hx5U",
         },
@@ -46,11 +47,11 @@ cal_dict={
             "Top+X":"1mue6og8iee85iuigf9n8r2a3c@group.calendar.google.com",
         },
         "filter":{
-            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting"]
+            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton"]
         }
     },
 
-
+    
     "ATLAS Plenaries":{
         "input_urls":{
             "ATLAS Top":"https://indico.cern.ch/export/categ/3332.ics?apikey=d465b7f8-bb8d-4da9-b4e0-069b534b2af3&from=-31d&signature=3f74262d700b2c654cc2a6088c53f8ffa12cd74a",
@@ -115,14 +116,21 @@ def main():
 
         # Write events to output google calendar (if they do not already exist and pass filter requirements)
         for out_lab,out_ID in cal_dict[cal_grp]["output_IDs"].items():
-            outcal_events=get_existing_gcal_events(service,out_ID)
+            #outcal_events=get_existing_gcal_events(service,out_ID)
+
+            #only check wrt master calendar (previously deleted events don't get reloaded)
+            outcal_events=get_existing_gcal_events(service,master_ID)
             events_to_write=gcal_events_to_update(events,outcal_events,cal_dict[cal_grp]["filter"])
             total_new_events+=len(events_to_write)
             print(f"   - Sending {len(events_to_write)} new event(s) to {out_lab}: {out_ID}")
             for event in events_to_write:
                 insert_gcal_event(service,out_ID,event)
+                insert_gcal_event(service,master_ID,event)
                 
     print(f'\nFound a total of {total_new_events} new event(s) to write.')
+
+
+
     
 def get_gcalsvc():
     """Gets google calendar API service"""

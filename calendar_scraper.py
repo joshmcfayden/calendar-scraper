@@ -23,6 +23,7 @@ import dateutil.parser
 
 master_ID="krjhbtbk9u1028frg0n4pslso0@group.calendar.google.com"
 
+
 cal_dict={
     "HSF":{
         "input_urls":{
@@ -99,7 +100,11 @@ def main():
     service=get_gcalsvc()
 
     total_new_events=0
-    
+
+    mastercal_events=get_existing_gcal_events(service,master_ID)
+    #for me in mastercal_events:
+    #    print("master: ",me['summary'],me["start"]["dateTime"])
+
     # Iterate over calendar groups in calendar dictionary
     for cal_grp in cal_dict:
         
@@ -119,11 +124,11 @@ def main():
             #outcal_events=get_existing_gcal_events(service,out_ID)
 
             #only check wrt master calendar (previously deleted events don't get reloaded)
-            outcal_events=get_existing_gcal_events(service,master_ID)
-            events_to_write=gcal_events_to_update(events,outcal_events,cal_dict[cal_grp]["filter"])
+            events_to_write=gcal_events_to_update(events,mastercal_events,cal_dict[cal_grp]["filter"])
             total_new_events+=len(events_to_write)
             print(f"   - Sending {len(events_to_write)} new event(s) to {out_lab}: {out_ID}")
             for event in events_to_write:
+                #print("write: ",event['summary'],event["start"]["dateTime"])
                 insert_gcal_event(service,out_ID,event)
                 insert_gcal_event(service,master_ID,event)
                 
@@ -188,15 +193,24 @@ def insert_gcal_event(service,calendarId,event):
     """Add new event to google calendar"""
     event = service.events().insert(calendarId=calendarId, body=event).execute()
     print('Event created: %s' % (event.get('htmlLink')))
-
     return
     
 def get_existing_gcal_events(service,calendarId):
     """Get existing events from google calendar"""
-    events_result = service.events().list(calendarId=calendarId).execute()
-    events = events_result.get('items', [])
+    #events_result = service.events().list(calendarId=calendarId).execute()
+    #events = events_result.get('items', [])
+    #return events
+    events=[]
+    page_token = None
+    while True:
+        tmp_events = service.events().list(calendarId=calendarId, pageToken=page_token).execute()
+        for tmp_event in tmp_events['items']:
+            events.append(tmp_event)
+        page_token = tmp_events.get('nextPageToken')
+        if not page_token:
+            break
     return events
-    
+
 def get_icscal(url):
     """Get icspy calendar object from ics url"""
     c = Calendar(requests.get(url).text)
@@ -232,12 +246,14 @@ def gcal_events_to_update(events_found,events_in_cal,filters):
 
         # only update events
         for c_evt in events_in_cal:
-            #print(w_evt["summary"],c_evt["summary"],w_evt["start"],c_evt["start"])
 
-            if w_evt["summary"] == c_evt["summary"] and match_datetimes(w_evt["start"]["dateTime"],c_evt["start"]["dateTime"]):
-                write=False
-                break
+            if w_evt["summary"] == c_evt["summary"]:
+                #print(w_evt["summary"],w_evt["start"]["dateTime"],c_evt["start"]["dateTime"])
+                if match_datetimes(w_evt["start"]["dateTime"],c_evt["start"]["dateTime"]):
+                    write=False
+                    break
 
+            
         # apply filters
         if filters:
             if "exclude" in filters:

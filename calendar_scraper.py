@@ -43,6 +43,8 @@ cal_dict={
             "ATLAS Top Reco":"https://indico.cern.ch/category/3337/events.ics?user_token=56945_a-uEqcijLrilk2YBr3lgIw7nt6t7siwyc6ViBB_4CkY",
             "ATLAS HTop":"https://indico.cern.ch/export/categ/9788.ics?apikey=d465b7f8-bb8d-4da9-b4e0-069b534b2af3&from=-31d&signature=d3a58260e55ce56e1ecad3698607f17b73752bb7",
             "Global EFT":"https://indico.cern.ch/category/13634/events.ics?user_token=56945_50Z_rm3Q7FGn8I8SI2Na5qEoXTnrng6_n0t_fN6Hx5U",
+            "ATLAS ttHML":"https://indico.cern.ch/category/9792/events.ics?user_token=56945_YRV92ZifkVKgmhpEzD5JEB0dy7R_qX5OH5xSV6PnUEs",
+            "ATLAS JEFTIC":"https://indico.cern.ch/category/15272/events.ics?user_token=56945_19cswGr_OeJqvPKmUCQ7WFBTle_A53ZdYhN40EagH_I",
         },
         "output_IDs":{
             "Top+X":"1mue6og8iee85iuigf9n8r2a3c@group.calendar.google.com",
@@ -89,7 +91,20 @@ cal_dict={
         "filter":None,   
     },
 
-    
+
+        "FASER":{
+        "input_urls":{
+            "FASER Physics":"https://indico.cern.ch/category/14830/events.ics?user_token=56945_J5bHLNjc5ii8JwDpYy3-mHYa4KPG9IoMniz0lHjZpDA",
+            "FASER General":"https://indico.cern.ch/category/10654/events.ics?user_token=56945_6Lg6oAR64kp387C5kPaxwimOT9rHrsvqQgK0Sib5qo4",
+            "FASER2":"https://indico.cern.ch/category/16035/events.ics?user_token=56945_ppK6p1IvuUkK5MAqRYGeV4-3CnYvZKXxTWaJmL5Bc_0",
+            },
+        "output_IDs":{
+            "FASER":"ph5nmj6lqug14aa4i6jkh4cg1s@group.calendar.google.com",
+        },
+        "filter":None,   
+    },
+
+
     
 }
 

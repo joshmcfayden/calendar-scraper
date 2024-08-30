@@ -48,7 +48,7 @@ cal_dict={
             "Top WG":"ffd9f8d38ffb56bc0eb6bbb666fdbf641684fc5272868ab88f278722d8d75923@group.calendar.google.com",
         },
         "filter":{
-            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton","SMT b-fragmentation & development","Entanglement and spin correlations (l+jets)","boosted top spin correlation: l+jets","Dilepton spin density matrix","Top Mass and Width","t+charm","WWbb analysis meeting","tt+charm","t-channel cross section","ttbb lepton+jets","Top Yukawa coupling from the ttbar x-sec","LIV in ttbar","Top differential cross sections (l+jets channel - Full Run II)","HI top analysis meeting"]
+            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton","SMT b-fragmentation & development","Entanglement and spin correlations (l+jets)","boosted top spin correlation: l+jets","Dilepton spin density matrix","Top Mass and Width","t+charm","WWbb analysis meeting","tt+charm","t-channel cross section","ttbb lepton+jets","Top Yukawa coupling from the ttbar x-sec","LIV in ttbar","Top differential cross sections (l+jets channel - Full Run II)","HI top analysis meeting","EW ttW weekly"]
         }
     },  
 

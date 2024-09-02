@@ -48,7 +48,7 @@ cal_dict={
             "Top WG":"ffd9f8d38ffb56bc0eb6bbb666fdbf641684fc5272868ab88f278722d8d75923@group.calendar.google.com",
         },
         "filter":{
-            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton","SMT b-fragmentation & development","Entanglement and spin correlations (l+jets)","boosted top spin correlation: l+jets","Dilepton spin density matrix","Top Mass and Width","t+charm","WWbb analysis meeting","tt+charm","t-channel cross section","ttbb lepton+jets","Top Yukawa coupling from the ttbar x-sec","LIV in ttbar","Top differential cross sections (l+jets channel - Full Run II)","HI top analysis meeting","EW ttW weekly"]
+            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton","SMT b-fragmentation & development","Entanglement and spin correlations (l+jets)","boosted top spin correlation: l+jets","Dilepton spin density matrix","Top Mass and Width","t+charm","WWbb analysis meeting","tt+charm","t-channel cross section","ttbb lepton+jets","Top Yukawa coupling from the ttbar x-sec","LIV in ttbar","Top differential cross sections (l+jets channel - Full Run II)","HI top analysis meeting","EW ttW weekly","tZq differential"]
         }
     },  
 
@@ -66,7 +66,7 @@ cal_dict={
             "Top+X":"1mue6og8iee85iuigf9n8r2a3c@group.calendar.google.com",
         },
         "filter":{
-            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton","Top quarks + X weekly meeting","Run 3 SM 4top","ttZ boosted","Same-sign top pair EFT search","ttZ(->vv) meeting","Run 3 SM 4top"]
+            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton","Top quarks + X weekly meeting","Run 3 SM 4top","ttZ boosted","Same-sign top pair EFT search","ttZ(->vv) meeting","Run 3 SM 4top","tZq differential","Top quarks + X weekly meeting [Cancelled]"]
         }
     },
 

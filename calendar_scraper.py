@@ -43,12 +43,13 @@ cal_dict={
             "ATLAS Top Properties and Mass":"https://indico.cern.ch/category/6316/events.ics?user_token=56945_nIdveof6ckRtwn1OGDcJAfoDqGLDWOueclbfxKViCME",
             "ATLAS Top XS":"https://indico.cern.ch/category/3333/events.ics?user_token=56945_XCtjdVAio1wW8KuG8jqWKg040u9E8XLcebgL9zhjoTM",
             "ATLAS Physics Coordination":"https://indico.cern.ch/category/6956/events.ics?user_token=56945_MseapKUW-ezEGbYVzEdQ4vFRx9F8RrR9vISywH0ugx4",
+            "Editorial Boards":"https://indico.cern.ch/category/3338/events.ics?user_token=56945_e0BFpQMts1XgzVRRV-ucGdOP7WKTSU9FTEnJeWYit3k",
         },
         "output_IDs":{
             "Top WG":"ffd9f8d38ffb56bc0eb6bbb666fdbf641684fc5272868ab88f278722d8d75923@group.calendar.google.com",
         },
         "filter":{
-            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton","SMT b-fragmentation & development","Entanglement and spin correlations (l+jets)","boosted top spin correlation: l+jets","Dilepton spin density matrix","Top Mass and Width","t+charm","WWbb analysis meeting","tt+charm","t-channel cross section","ttbb lepton+jets","Top Yukawa coupling from the ttbar x-sec","LIV in ttbar","Top differential cross sections (l+jets channel - Full Run II)","HI top analysis meeting","EW ttW weekly","tZq differential"]
+            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton","SMT b-fragmentation & development","Entanglement and spin correlations (l+jets)","boosted top spin correlation: l+jets","Dilepton spin density matrix","Top Mass and Width","t+charm","WWbb analysis meeting","tt+charm","t-channel cross section","ttbb lepton+jets","Top Yukawa coupling from the ttbar x-sec","LIV in ttbar","Top differential cross sections (l+jets channel - Full Run II)","HI top analysis meeting","EW ttW weekly","tZq differential","ttZ boosted","ttZ(->vv) meeting","TPX Fit - SM and EFT","ttZ(->vv) meeting","Run 3 SM 4top","tqll FCNC search"]
         }
     },  
 
@@ -57,7 +58,7 @@ cal_dict={
         "input_urls":{
             "ATLAS Top+X":"https://indico.cern.ch/export/categ/12104.ics?apikey=d465b7f8-bb8d-4da9-b4e0-069b534b2af3&from=-31d&signature=23d64faf6b2f598b2a998200f6fbbb7822dd5204",
             "ATLAS Top Reco":"https://indico.cern.ch/category/3337/events.ics?user_token=56945_a-uEqcijLrilk2YBr3lgIw7nt6t7siwyc6ViBB_4CkY",
-            "ATLAS HTop":"https://indico.cern.ch/export/categ/9788.ics?apikey=d465b7f8-bb8d-4da9-b4e0-069b534b2af3&from=-31d&signature=d3a58260e55ce56e1ecad3698607f17b73752bb7",
+            "ATLAS HTop":"https://indico.cern.ch/category/18736/events.ics?user_token=56945_Ob_XIAXDWQev5fcSXuevCXtWtsZWNBtMER_dJZuPT1Y",
             "Global EFT":"https://indico.cern.ch/category/13634/events.ics?user_token=56945_50Z_rm3Q7FGn8I8SI2Na5qEoXTnrng6_n0t_fN6Hx5U",
             "ATLAS ttHML":"https://indico.cern.ch/category/9792/events.ics?user_token=56945_YRV92ZifkVKgmhpEzD5JEB0dy7R_qX5OH5xSV6PnUEs",
             "ATLAS JEFTIC":"https://indico.cern.ch/category/15272/events.ics?user_token=56945_19cswGr_OeJqvPKmUCQ7WFBTle_A53ZdYhN40EagH_I",
@@ -66,7 +67,7 @@ cal_dict={
             "Top+X":"1mue6og8iee85iuigf9n8r2a3c@group.calendar.google.com",
         },
         "filter":{
-            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton","Top quarks + X weekly meeting","Run 3 SM 4top","ttZ boosted","Same-sign top pair EFT search","ttZ(->vv) meeting","Run 3 SM 4top","tZq differential","Top quarks + X weekly meeting [Cancelled]"]
+            "exclude":["Heavy neutrinos search in ttbar decays","SM tqGamma analysis meeting","CLFV in top-quark decays","Four tops re-interpretation working meeting","Top Yukawa coupling","FCNC photon informal meeting","FCNC tHq multilepton","Top quarks + X weekly meeting","Run 3 SM 4top","ttZ boosted","Same-sign top pair EFT search","ttZ(->vv) meeting","Run 3 SM 4top","tZq differential","Top quarks + X weekly meeting [Cancelled]","ttZ boosted","ttZ(->vv) meeting"]
         }
     },
 
@@ -112,7 +113,7 @@ cal_dict={
     
     "ATLAS Plenaries":{
         "input_urls":{
-            "ATLAS Higgs":"https://indico.cern.ch/export/categ/3966.ics?apikey=d465b7f8-bb8d-4da9-b4e0-069b534b2af3&from=-31d&signature=883d265cbae2731fd5029de644f0fa69ae8e5857",
+            "ATLAS Higgs":"https://indico.cern.ch/category/18715/events.ics?user_token=56945_AaR_g3o-sCdF0bB4Suh2FbprBFjlulTtOorxTbj4_ik",
             "ATLAS Weekly":"https://indico.cern.ch/category/2636/events.ics?user_token=56945_bUCz2q9qTIj50tKIYQYKZA9QCrMWwnQA07ldk8N8lCg",
             "ATLAS Weeks":"https://indico.cern.ch/export/categ/6848.ics?apikey=d465b7f8-bb8d-4da9-b4e0-069b534b2af3&from=-31d&signature=ff35771f9a16bebe452d0a2c2dad59eb13f46c34",
             "ATLAS P&P Weeks/Workshops":"https://indico.cern.ch/category/6945/events.ics?user_token=56945_dh-FtiAf3AXHwwywsgLMAgCyNxhVO1ND7nf3Gj9CeS0",

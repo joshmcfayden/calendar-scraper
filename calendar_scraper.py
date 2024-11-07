@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 
 # includes for gCal API
 from __future__ import print_function
@@ -60,7 +60,7 @@ cal_dict={
             "ATLAS Top Reco":"https://indico.cern.ch/category/3337/events.ics?user_token=56945_a-uEqcijLrilk2YBr3lgIw7nt6t7siwyc6ViBB_4CkY",
             "ATLAS HTop":"https://indico.cern.ch/category/18736/events.ics?user_token=56945_Ob_XIAXDWQev5fcSXuevCXtWtsZWNBtMER_dJZuPT1Y",
             "Global EFT":"https://indico.cern.ch/category/13634/events.ics?user_token=56945_50Z_rm3Q7FGn8I8SI2Na5qEoXTnrng6_n0t_fN6Hx5U",
-            "ATLAS ttHML":"https://indico.cern.ch/category/9792/events.ics?user_token=56945_YRV92ZifkVKgmhpEzD5JEB0dy7R_qX5OH5xSV6PnUEs",
+            "ATLAS ttHML":"https://indico.cern.ch/category/18924/events.ics?user_token=56945_l_BYoJ0igOxh4wSJMwFNdgb2rWOys7MwP2Se-1Jecgk",
             "ATLAS JEFTIC":"https://indico.cern.ch/category/15272/events.ics?user_token=56945_19cswGr_OeJqvPKmUCQ7WFBTle_A53ZdYhN40EagH_I",
         },
         "output_IDs":{
